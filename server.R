@@ -3,12 +3,13 @@ library(shiny)
 
 shinyServer(
     function(input, output, session) {
-        output$firstValue <- renderPrint({input$first})
-        
-        observe({
-            if (input$first != "") {
-                new_l <- l[-which({input$first} == l)[[1]]]
-                updateSelectInput(session, "second", choices=new_l)
+        output$text <- renderText({
+            if (input$submit != 0){
+                if (input$first != input$second)
+                    paste("We'll correlate",{input$first},"with",{input$second})
+                else
+                    paste("Would you be a dear and please pick different sets of",
+                          "data so I can correlate? *blinks*")
             }
         })
     }

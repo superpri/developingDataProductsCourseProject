@@ -3,17 +3,16 @@ library(shiny)
 
 shinyUI(pageWithSidebar(
     headerPanel("Even more spurious correlation!"),
-    sidebarPanel(
-        selectInput("first", "Choose the first variable:",l),
-        
-        conditionalPanel(
-            condition = "input.first != ''",
-            selectInput("second", "Server updated:", choices = NULL, selected = NULL)
+    titlePanel("submitButton example"),
+    fluidRow(
+        column(3, wellPanel(
+            selectInput("first", "Choose the first variable:",l),
+            selectInput("second", "And now the second:", l),
+            actionButton("submit","Submit")
+        )),
+        column(6,
+               
+               verbatimTextOutput("text")
         )
-          
-    ),
-    mainPanel(
-        p('Output First'),
-        textOutput('firstValue')
     )
 ))
