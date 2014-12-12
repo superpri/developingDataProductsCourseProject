@@ -2,15 +2,21 @@
 library(shiny)
 
 shinyServer(
-    function(input, output, session) {
+    function(input, output) {
         output$text <- renderText({
-            if (input$submit != 0){
+            if (input$first != "" &&  input$second != ""){
                 if (input$first != input$second)
-                    paste("We'll correlate",{input$first},"with",{input$second})
+                    paste("We'll correlate",{input$first},"with",{input$second},"!",
+                          randomCoolWord())
                 else
-                    paste("Would you be a dear and please pick different sets of",
-                          "data so I can correlate? *blinks*")
+                    paste("This shiny app already does spourious things...",
+                          "Would you be a dear and please pick different sets of",
+                          "data so I can play with? *blinks*")
             }
+        })
+        
+        output$regression <- renderText({
+            lm()
         })
     }
 )

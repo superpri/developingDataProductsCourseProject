@@ -2,17 +2,17 @@
 library(shiny)
 
 shinyUI(pageWithSidebar(
-    headerPanel("Even more spurious correlation!"),
-    titlePanel("submitButton example"),
+    headerPanel("Even more spurious correlation! \\o/"),
+    titlePanel("Entretain yourself with some data <3"),
     fluidRow(
-        column(3, wellPanel(
-            selectInput("first", "Choose the first variable:",l),
+        column(4, wellPanel(
+            selectInput("first", "Choose the first set of data:",l),
             selectInput("second", "And now the second:", l),
-            actionButton("submit","Submit")
+            submitButton("submit","Entretain me")
         )),
         column(6,
-               
-               verbatimTextOutput("text")
+            verbatimTextOutput("text")
+            verbatimTextOutput("regression")
         )
     )
 ))
