@@ -10,8 +10,8 @@ shinyUI(pageWithSidebar(
             selectInput("second", "And now the second:", l),
             submitButton("submit","Entretain me")
         )),
-        column(6,
-            verbatimTextOutput("text")
+        column(8,
+            verbatimTextOutput("text"),
             verbatimTextOutput("regression")
         )
     )
