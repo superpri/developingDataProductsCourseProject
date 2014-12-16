@@ -29,12 +29,16 @@ shinyServer(
         output$plot1 <- renderPlot({
             if (input$submit > 0) {
                 if (input$first != input$second){
-                    plot.obj<<-list() # not sure why input$X can not be used directly?
+                    
+                    # sweat, blood, and tears until reaching this solution
+                    plot.obj<<-list() 
                     plot.obj$data<<-df 
                     plot.obj$x<<-with(plot.obj$data,get(input$first)) 
                     plot.obj$y<<-with(plot.obj$data,get(input$second)) 
                     
-                    return(ggplot(plot.obj$data,aes(x=plot.obj$x, y=plot.obj$y))+geom_point())
+                    return(ggplot(plot.obj$data,aes(x=plot.obj$x, y=plot.obj$y))+
+                               geom_point()+
+                               stat_smooth(method="lm"))
                 }
             }
         })

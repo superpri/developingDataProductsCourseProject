@@ -11,9 +11,15 @@ shinyUI(pageWithSidebar(
             actionButton("submit","Entretain me")
         )),
         column(8,
-            verbatimTextOutput("text"),
-            verbatimTextOutput("regression"),
-            plotOutput("plot1")
+               tabsetPanel(
+                   tabPanel("Blah blah blah",
+                            verbatimTextOutput("text"),
+                            verbatimTextOutput("regression")
+                   ),
+                   tabPanel("OMG GRAPHICS",
+                            plotOutput("plot1")
+                   )
+               )
         )
     )
 ))
