@@ -20,6 +20,7 @@ shinyServer(
         })
         output$regression <- renderText({
             if (input$submit > 0) {
+                input$submit 
                 if (input$first != input$second){
                     reg <- regression(df[,input$first], df[,input$second])
                     return(capture.output(summary(reg)))
@@ -28,6 +29,7 @@ shinyServer(
         })
         output$plot1 <- renderPlot({
             if (input$submit > 0) {
+                input$submit 
                 if (input$first != input$second){
                     
                     # sweat, blood, and tears until reaching this solution
@@ -38,6 +40,7 @@ shinyServer(
                     
                     return(ggplot(plot.obj$data,aes(x=plot.obj$x, y=plot.obj$y))+
                                geom_point()+
+                               labs(x = input$first, y=input$second)+
                                stat_smooth(method="lm"))
                 }
             }
