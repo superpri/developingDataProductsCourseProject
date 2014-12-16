@@ -8,11 +8,12 @@ shinyUI(pageWithSidebar(
         column(4, wellPanel(
             selectInput("first", "Choose the first set of data:",l),
             selectInput("second", "And now the second:", l),
-            submitButton("submit","Entretain me")
+            actionButton("submit","Entretain me")
         )),
         column(8,
             verbatimTextOutput("text"),
-            verbatimTextOutput("regression")
+            verbatimTextOutput("regression"),
+            plotOutput("plot1")
         )
     )
 ))

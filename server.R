@@ -1,5 +1,6 @@
 # controls what it does.
 library(shiny)
+library(ggplot2)
 
 #prediction funcion
 regression <- function(first,second) lm(first ~ second)
@@ -18,11 +19,24 @@ shinyServer(
             }
         })
         output$regression <- renderText({
-            #if (input$submit != 0) }
-                input$submit
-                #regression(input$first, input$second)
-                regression(df[,input$first], df[,input$second])
-            #}
+            if (input$submit > 0) {
+                if (input$first != input$second){
+                    reg <- regression(df[,input$first], df[,input$second])
+                    return(capture.output(summary(reg)))
+                }
+            }
+        })
+        output$plot1 <- renderPlot({
+            if (input$submit > 0) {
+                if (input$first != input$second){
+                    plot.obj<<-list() # not sure why input$X can not be used directly?
+                    plot.obj$data<<-df 
+                    plot.obj$x<<-with(plot.obj$data,get(input$first)) 
+                    plot.obj$y<<-with(plot.obj$data,get(input$second)) 
+                    
+                    return(ggplot(plot.obj$data,aes(x=plot.obj$x, y=plot.obj$y))+geom_point())
+                }
+            }
         })
     }
 )
