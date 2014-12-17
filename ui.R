@@ -13,8 +13,12 @@ shinyUI(pageWithSidebar(
         column(8,
                tabsetPanel(
                    tabPanel("Blah blah blah",
-                            verbatimTextOutput("text"),
+                        verbatimTextOutput("text"),
+                        conditionalPanel(
+                            condition = "input.submit > 0",
+                            p("What can we know about this? Hm?"),
                             verbatimTextOutput("regression")
+                        )
                    ),
                    tabPanel("OMG GRAPHICS",
                             plotOutput("plot1")
