@@ -45,5 +45,46 @@ shinyServer(
                 }
             }
         })
+        output$variableFirst <- renderText({
+            if (input$submit > 0) {
+                input$submit 
+                if (input$first != input$second){
+                    paste("First:",input$first)
+                }
+            }
+        })
+        output$variableSecond <- renderText({
+            if (input$submit > 0) {
+                input$submit 
+                if (input$first != input$second){
+                    paste("Second:",input$second)
+                }
+            }
+        })
+        output$quality <- renderText({
+            if (input$submit > 0) {
+                input$submit 
+                if (input$first != input$second){
+                    reg <- regression(df[,input$first], df[,input$second])
+                    if (summary(reg)$r.squared > 0.7)
+                        paste("VERY HIGH! (R² =",summary(reg)$r.squared,")")
+                    else if (summary(reg)$r.squared < 0.7 &&
+                                 summary(reg)$r.squared > 0.4)
+                        paste("GOOD! (R² =",summary(reg)$r.squared,")")
+                    else
+                        paste("OK! (R² =",summary(reg)$r.squared,")")
+                }
+            }
+        })
+        
+        output$fstatistic <- renderText({
+            if (input$submit > 0) {
+                input$submit 
+                if (input$first != input$second){
+                    reg <- regression(df[,input$first], df[,input$second])
+                    paste("SIGNIFICANT! (F statistic:",summary(m)$fstatistic[1],"")
+                }
+            }
+        })
     }
 )

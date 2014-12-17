@@ -34,7 +34,13 @@ divorces <- c(5,4.7,4.6,4.4,4.3,4.1,4.2,4.2,4.2,4.1,NA)
 margarine <- c(8.2,7,6.5,5.3,5.2,4,4.6,4.5,4.2,3.7,NA)
 
 #data frame with all data to analyze
-df <- data.frame(time=time,science=science, deaths=deaths, nicholasCage=nicholasCage, cheese=cheese, divorces=divorces, margarine=margarine)
+df <- data.frame(time=time,
+                 science=science, 
+                 deaths=deaths, 
+                 nicholasCage=nicholasCage, 
+                 cheese=cheese, 
+                 divorces=divorces, 
+                 margarine=margarine)
 
 #silly function to give a random cool word to put
 #at the end of the text output thing
