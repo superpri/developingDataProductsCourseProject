@@ -17,7 +17,7 @@ shinyUI(pageWithSidebar(
         )),
         column(8,
                tabsetPanel(
-                   tabPanel("Blah blah blah",
+                   tabPanel("Information!",
                         verbatimTextOutput("text"),
                         conditionalPanel(
                             condition = "input.submit > 0",
@@ -39,10 +39,9 @@ shinyUI(pageWithSidebar(
                                     tags$li(verbatimTextOutput("fstatistic"))
                                 )
                             )
-                            #verbatimTextOutput("regression")
                         )
                    ),
-                   tabPanel("OMG GRAPHICS",
+                   tabPanel("OMG GRAPHICS!",
                         conditionalPanel(
                             condition = "input.submit > 0",
                             p("Let's see the relation between our data! Weehee!"),

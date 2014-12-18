@@ -18,15 +18,7 @@ shinyServer(
                           "data so I can play with? *blinks*")
             }
         })
-        output$regression <- renderText({
-            input$submit 
-            isolate(
-                if (input$first != input$second){
-                    reg <- regression(df[,input$first], df[,input$second])
-                    return(capture.output(summary(reg)))
-                }
-            )
-        })
+
         output$plot1 <- renderPlot({
             input$submit 
             isolate(
