@@ -19,17 +19,17 @@ shinyServer(
             }
         })
         output$regression <- renderText({
-            if (input$submit > 0) {
-                input$submit 
+            input$submit 
+            isolate(
                 if (input$first != input$second){
                     reg <- regression(df[,input$first], df[,input$second])
                     return(capture.output(summary(reg)))
                 }
-            }
+            )
         })
         output$plot1 <- renderPlot({
-            if (input$submit > 0) {
-                input$submit 
+            input$submit 
+            isolate(
                 if (input$first != input$second){
                     
                     # sweat, blood, and tears until reaching this solution
@@ -43,27 +43,27 @@ shinyServer(
                                labs(x = input$first, y=input$second)+
                                stat_smooth(method="lm"))
                 }
-            }
+            )
         })
         output$variableFirst <- renderText({
-            if (input$submit > 0) {
-                input$submit 
+            input$submit 
+            isolate(
                 if (input$first != input$second){
                     paste("First:",input$first)
                 }
-            }
+            )
         })
         output$variableSecond <- renderText({
-            if (input$submit > 0) {
-                input$submit 
+            input$submit 
+            isolate(
                 if (input$first != input$second){
                     paste("Second:",input$second)
                 }
-            }
+            )
         })
         output$quality <- renderText({
-            if (input$submit > 0) {
-                input$submit 
+            input$submit 
+            isolate(
                 if (input$first != input$second){
                     reg <- regression(df[,input$first], df[,input$second])
                     if (summary(reg)$r.squared > 0.7)
@@ -74,17 +74,17 @@ shinyServer(
                     else
                         paste("OK! (R² =",summary(reg)$r.squared,")")
                 }
-            }
+            )
         })
         
         output$fstatistic <- renderText({
-            if (input$submit > 0) {
-                input$submit 
+            input$submit 
+            isolate(
                 if (input$first != input$second){
                     reg <- regression(df[,input$first], df[,input$second])
                     paste("SIGNIFICANT! (F statistic:",summary(m)$fstatistic[1],"")
                 }
-            }
+            )
         })
     }
 )
