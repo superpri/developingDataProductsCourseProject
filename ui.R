@@ -12,8 +12,8 @@ shinyUI(pageWithSidebar(
             br(),
             p(strong(em("Documentation:",a("Even more spourious correlation!",
                                            href="READMe.html")))),
-            p(strong(em("Github repository:",a("Developing Data Products - Peer Assessment Project; Shiny App",
-                                               href="https://github.com/superpri/developingDataProductsCouseProject"))))
+            p(strong(em("Github repository:",a("Developing Data Products Course Project",
+                                               href="https://github.com/superpri/developingDataProductsCourseProject"))))
         )),
         column(8,
                tabsetPanel(
@@ -45,6 +45,8 @@ shinyUI(pageWithSidebar(
                         conditionalPanel(
                             condition = "input.submit > 0",
                             p("Let's see the relation between our data! Weehee!"),
+                            p("Clearly, out model correlates the data! Look:"),
+                            verbatimTextOutput("correlation"),
                             plotOutput("plot1")
                         )
                    )

@@ -74,7 +74,16 @@ shinyServer(
             isolate(
                 if (input$first != input$second){
                     reg <- regression(df[,input$first], df[,input$second])
-                    paste("SIGNIFICANT! (F statistic:",summary(m)$fstatistic[1],"")
+                    paste("SIGNIFICANT! (F statistic:",summary(m)$fstatistic[1],")")
+                }
+            )
+        })
+        
+        output$correlation <- renderText({
+            input$submit 
+            isolate(
+                if (input$first != input$second){
+                    paste("Correlation coefficient:",cor(df[,input$first], df[,input$second]))
                 }
             )
         })
