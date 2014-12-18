@@ -21,6 +21,7 @@ The Shiny application in question is entirely up to you. However, if you're havi
 I chose to build a silly application inspired by [Spurious Correlation](http://tylervigen.com/) to show how any data could be related with a simple regression model, and with the help of bad interpreted numbers it can really become true. All the 5 vectors of data were taken from the Spurious Correlation site.
 
 Here's the link to the deployed application: (http://superpri.shinyapps.io/developingDataProductsCourseProject)
+
 Here's the link to the slidify presentation: (http://rpubs.com/superpri/emsc)
 
 
