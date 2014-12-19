@@ -20,6 +20,31 @@ The Shiny application in question is entirely up to you. However, if you're havi
 
 I chose to build a silly application inspired by [Spurious Correlation](http://tylervigen.com/) to show how any data could be related with a simple regression model, and with the help of bad interpreted numbers it can really become true. All the 5 vectors of data were taken from the Spurious Correlation site.
 
+Intro & Motivation
+===
+
+Data: it's everywhere!
+
+Wouldn't it be nice to have some application where I can see real data analysis?
+And some graphics?
+All this polls and data analysis hidden from the reader is a bad thing.
+
+We would like you to have access to the important numbers that define if a data analysis is really successful.
+
+How to use:
+====
+
+Super easy! 
+
+Just choose any set of data you want to infer information onto by selecting them on the select boxes on your right.
+
+The system won't allow you to infer information on the same set of data.
+
+Click the "Entretain me!" button when you're ready, and read the results!
+
+Links:
+===
+
 Here's the link to the deployed application: (http://superpri.shinyapps.io/developingDataProductsCourseProject)
 
 Here's the link to the slidify presentation: (http://rpubs.com/superpri/emsc)
