@@ -11,7 +11,7 @@ shinyUI(pageWithSidebar(
             actionButton("submit","Entretain me"),
             br(),
             p(strong(em("Documentation:",a("Even more spourious correlation!",
-                                           href="READMe.html")))),
+                                           href="readme.html")))),
             p(strong(em("Github repository:",a("Developing Data Products Course Project",
                                                href="https://github.com/superpri/developingDataProductsCourseProject"))))
         )),
