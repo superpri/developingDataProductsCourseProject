@@ -10,10 +10,9 @@ shinyUI(pageWithSidebar(
             selectInput("second", "And now the second:", l),
             actionButton("submit","Entretain me"),
             br(),
-            p(strong(em("Documentation:",a("Even more spourious correlation!",
-                                           href="readme.html")))),
-            p(strong(em("Github repository:",a("Developing Data Products Course Project",
-                                               href="https://github.com/superpri/developingDataProductsCourseProject"))))
+            p(strong(em("Documentation and Github repository:",
+                        a("Developing Data Products Course Project",
+                          href="https://github.com/superpri/developingDataProductsCourseProject"))))
         )),
         column(8,
                tabsetPanel(
